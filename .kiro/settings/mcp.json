@@ -1,0 +1,50 @@
+{
+  "mcpServers": { "MiniMax": {
+    "command": "/opt/homebrew/bin/uvx",
+    "args": [
+      "minimax-mcp",
+      "-y"
+    ],
+    "env": {
+      "MINIMAX_API_KEY": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJHcm91cE5hbWUiOiLlpKflnKPnp5HmioDogqHku73mnInpmZDlhazlj7giLCJVc2VyTmFtZSI6IumZiOeHlei0niIsIkFjY291bnQiOiIiLCJTdWJqZWN0SUQiOiIxODYyMDYyMDk3MDc3MTEyODQwIiwiUGhvbmUiOiIxNTgxODE3NzIzNyIsIkdyb3VwSUQiOiIxODYyMDYyMDk3MDY4NzI0MjMyIiwiUGFnZU5hbWUiOiIiLCJNYWlsIjoiIiwiQ3JlYXRlVGltZSI6IjIwMjQtMTItMTEgMTA6MzQ6NTUiLCJUb2tlblR5cGUiOjEsImlzcyI6Im1pbmltYXgifQ.PrRiANthM8z9vvPfsillWsjMf4xyt0HXyZ4MGrT4ddv71wh-ejgvsq0s7ygz0fH8NWGc5rDo2DGQAXBJAwX6N0oxD6pH0ecvaPWAukeh4z3q0t3QBHcvYg2wBhKI1Q2_-b-VjTrS01PojaRjegEGOmWk5Q7ASq5inxL4dCwQUYaIqxaE_xt-wRxB_l5lMDut6X9LrcQT182Ii_x0bkC4ZR2eJA68_8frHEtzRS_Ga729wRv7mES8rQ0DtLvUcPELk6juxlCNEUA8lTA6nOURWorxEL0arafd1Bn9aTPacnXkfMFIXJydzj7RKB7MU39zsU84QiysZgb5dTvY4SS6dA",
+      "MINIMAX_MCP_BASE_PATH": "/Users/mulele/Documents/2-Cursor/Minimax",
+      "MINIMAX_API_HOST": "https://api.minimax.chat",
+      "MINIMAX_API_RESOURCE_MODE": "url"
+    }
+  },
+  "Sequential Thinking": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@smithery/cli@latest",
+      "run",
+      "@smithery-ai/server-sequential-thinking",
+      "--key",
+      "09dbafe2-ea06-486a-9b3b-ef036fdd447c"
+    ],
+    "env": {}
+  },
+  "playwright-mcp-server": {
+    "command": "npx",
+    "args": [
+      "-y",
+      "@executeautomation/playwright-mcp-server"
+    ]
+  },
+    "amap-maps-streamableHTTP": {
+      "url": "https://mcp.amap.com/mcp?key=7240c2f67bb39d2622b3548640cf8ee5"
+    },
+  "n8n-mcp": {
+    "command": "npx",
+    "args": ["n8n-mcp"],
+    "env": {
+      "MCP_MODE": "stdio",
+      "LOG_LEVEL": "error",
+      "DISABLE_CONSOLE_OUTPUT": "true",
+      "N8N_API_URL": "http://localhost:5678/",
+      "N8N_API_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiYTE0MTBlZS05OGRiLTRiMzYtOTY1NC1mNjQzZGRhMDAyYjYiLCJpc3MiOiJuOG4iLCJhdWQiOiJwdWJsaWMtYXBpIiwiaWF0IjoxNzU0MDIxMDk3LCJleHAiOjE3NTY2MTI4MDB9.PV3oHFamv9BezhuR7LONiIdfsMIR6yEnei0lE5sLunI"
+    }
+  }
+  }
+}

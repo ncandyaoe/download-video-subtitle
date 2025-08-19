@@ -1,0 +1,33 @@
+services:
+  subtitle-service:
+    build: .
+    container_name: subtitle-service
+    ports:
+      - "7878:7878"
+    volumes:
+      - ./output:/app/output
+      - ./downloads:/app/downloads
+      - ./keyframes:/app/keyframes
+    restart: unless-stopped  # 恢复自动重启，但优化配置
+    deploy:
+      resources:
+        limits:
+          memory: 16G  # 大幅增加内存限制，支持长视频转录
+          cpus: '8.0'  # 增加CPU限制
+        reservations:
+          memory: 6G   # 增加保留内存
+          cpus: '3.0'
+    environment:
+      - PYTHONUNBUFFERED=1
+      - OMP_NUM_THREADS=4  # 增加线程数提高性能
+      - MKL_NUM_THREADS=4
+      - MALLOC_TRIM_THRESHOLD_=100000  # 优化内存管理
+      - PYTHONMALLOC=malloc  # 使用系统malloc
+      - MALLOC_ARENA_MAX=2  # 限制内存分配器
+    # 优化健康检查，避免长视频转录时被误判
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7878/health", "--max-time", "30"]
+      interval: 600s  # 10分钟检查一次，避免频繁检查
+      timeout: 60s
+      retries: 3
+      start_period: 600s  # 10分钟启动期，给长视频转录足够时间

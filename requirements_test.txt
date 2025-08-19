@@ -1,0 +1,12 @@
+# 测试界面和测试工具依赖
+gradio>=4.0.0
+pandas>=1.5.0
+requests>=2.28.0
+
+# 可选：用于更好的测试报告
+pytest>=7.0.0
+pytest-html>=3.1.0
+pytest-cov>=4.0.0
+
+# 可选：用于性能测试
+locust>=2.0.0
